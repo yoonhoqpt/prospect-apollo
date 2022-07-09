@@ -12,7 +12,7 @@ module.exports = {
             const oldUser = await User.findOne({ email });
            // throw error if it does
             if (oldUser) {
-                throw new ApolloError('A user is already registered with the email' + email, 'USER_ALREADY_EXISTS');
+                throw new ApolloError('A user is already registered with the email ' + email, 'USER_ALREADY_EXISTS');
             }
            // encrypt password
             var encryptedPassword = await bcrypt.hash(password, 10);
