@@ -21,13 +21,12 @@ const server = new ApolloServer({
 // initializing connection to the mongoDB database
 mongoose.connect(mongoURI, {useNewUrlParser: true})
     .then (() => {
-        // if connected to the database, log this string to the console, and start listening on port 5000
-        console.log('Successfully connected to the MongoDB database');
-        return server.listen({port: 5000});
+        // if connected to the database, log it in the console
+        console.log('Successfully connected to the MongoDB database');        
     })
-    // when getting back a response (res) from the server, log in which port the server is running to the console
+    // when getting back a response (res) from the server, log it in the console
     .then ((res) => {
-        console.log(`Server running at ${res.url}`)
+        console.log(`Server running`)
     })
 
 exports.graphqlHandler = server.createHandler();

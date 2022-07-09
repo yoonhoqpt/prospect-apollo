@@ -8,17 +8,42 @@ type Message {
     createdAt: String
     createdBy: String
 }
+""" 
+the schema "User" refers to the candidate account
+"""
+type User {
+    firstName: String
+    lastName: String
+    email: String
+    password: String
+    token: String
+}
 
 input MessageInput {
     text: String
     username: String
 }
 
+input RegisterInput {
+    firstName: String
+    lastName: String
+    email: String
+    password: String
+}
+
+input LoginInput {
+    email: String
+    password: String
+}
+
 type Query {
     message(id: ID!): Message
+    user(id: ID!): User
 }
 
 type Mutation {
     createMessage(messageInput: MessageInput): Message!
+    registerUser(registerInput: RegisterInput): User
+    loginUser(loginInput: LoginInput): User
 }
 `
