@@ -63,7 +63,7 @@ module.exports = {
                 }
              } else {
                     // if the user doesn't exist return error
-                    throw new ApolloError('Incorrect password', 'INCORRECT_PASSWORD')
+                    throw new ApolloError('Email or password is incorrect', 'INCORRECT_PASSWORD')
                 }
             }                     
             
