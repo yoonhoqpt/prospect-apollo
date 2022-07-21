@@ -19,6 +19,18 @@ type User {
     token: String
 }
 
+type Post {
+    companyName: String
+    jobTitle: String
+    location: String
+    remote: String
+    salaryMin: Int
+    salaryMax: Int    
+    ExperienceLevel: String
+    interviewNum: Int
+    jobDesc: String
+}
+
 input MessageInput {
     text: String
     username: String
@@ -36,14 +48,28 @@ input LoginInput {
     password: String
 }
 
+input PostInput {
+    companyName: String
+    jobTitle: String
+    location: String
+    remote: String
+    salaryMin: Int
+    salaryMax: Int    
+    ExperienceLevel: String
+    interviewNum: Int
+    jobDesc: String
+}
+
 type Query {
     message(id: ID!): Message
     user(id: ID!): User
+    post(id: ID!): Post
 }
 
 type Mutation {
     createMessage(messageInput: MessageInput): Message!
     registerUser(registerInput: RegisterInput): User
     loginUser(loginInput: LoginInput): User
+    createPost(postInput: PostInput): Post!
 }
 `
