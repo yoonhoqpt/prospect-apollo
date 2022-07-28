@@ -63,7 +63,7 @@ input PostInput {
 type Query {
     message(id: ID!): Message
     user(id: ID!): User
-    post(id: ID!): Post
+    getPost(companyName: String!): Post
 }
 
 type Mutation {
