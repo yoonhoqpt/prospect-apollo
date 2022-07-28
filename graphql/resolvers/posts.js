@@ -33,13 +33,17 @@ module.exports = {
     Query: {
         // the object 'post' is defined in typeDefs.js
         async getPost (_, {companyName}){
-            const post = await Post.findOne({ companyName });
-            // check if the entered password is the same as the encrypted password            
+            const post = await Post.findOne({ companyName });            
 
             return {
                 id: post.id,
                 ...post._doc
             }
-        }                    
+        },
+        async getAllPost() {
+            const postToReturn = await Post.find({});
+
+            return postToReturn;
+        } 
     }
 }

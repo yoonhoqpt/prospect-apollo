@@ -64,6 +64,7 @@ type Query {
     message(id: ID!): Message
     user(id: ID!): User
     getPost(companyName: String!): Post
+    getAllPost: [Post]
 }
 
 type Mutation {
